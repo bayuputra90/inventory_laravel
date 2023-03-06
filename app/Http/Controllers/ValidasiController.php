@@ -9,6 +9,11 @@ use App\Models\PermohonanItems;
 
 class ValidasiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:isTataUsaha');
+    }
+
     public function index()
     {
         $permohonan = Permohonan::where('status', '!=', 'draft')

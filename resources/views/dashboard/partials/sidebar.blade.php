@@ -11,6 +11,7 @@
                 </a>
             </li>
 
+            @can('isUser')
             <li class="sidebar-header ">
                 Data
             </li>
@@ -40,7 +41,9 @@
                     <i class="align-middle" data-feather="table"></i> <span class="align-middle">Pengadaan Barang</span>
                 </a>
             </li>
+            @endcan
 
+            @can('isTataUsaha')
             <li class="sidebar-header ">
                 Tata Usaha
             </li>
@@ -50,15 +53,19 @@
                     <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Validasi</span>
                 </a>
             </li>
+            @endcan
 
             <li class="sidebar-header ">
                 Akun
             </li>
 
             <li class="sidebar-item">
-                <a class="sidebar-link" href="#">
-                    <i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Logout</span>
-                </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button class="sidebar-link border-0" type="submit">
+                        <i class="align-middle" data-feather="log-out"></i> <span class="align-middle">Log Out</span>
+                    </button>
+                </form>
             </li>
         </ul>
     </div>
