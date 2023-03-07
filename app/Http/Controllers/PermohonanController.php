@@ -84,6 +84,14 @@ class PermohonanController extends Controller
         return view('dashboard.permohonan.detail', $data);
     }
 
+    public function hapus_permohonan($permohonan_id)
+    {
+        $permohonan = Permohonan::find($permohonan_id);
+        $permohonan->delete();
+
+        return redirect('permohonan')->with('message', 'Permohonan berhasil dihapus');
+    }
+
     public function items($permohonan_id)
     {
         $barang = Barang::all();

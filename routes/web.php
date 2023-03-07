@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function(){
         Route::get('permohonan/form_permohonan/{permohonan_id}', [PermohonanController::class, 'form_permohonan'])->name('permohonan.form');
         Route::post('permohonan/form_permohonan/{permohonan_id}', [PermohonanController::class, 'simpan_permohonan'])->name('permohonan.simpan');
         Route::get('permohonan/detail_permohonan/{permohonan_id}', [PermohonanController::class, 'detail_permohonan'])->name('permohonan.detail');
+        Route::delete('permohonan/hapus_permohonan/{permohonan_id}', [PermohonanController::class, 'hapus_permohonan'])->name('permohonan.hapus');
         Route::get('permohonan/items/{permohonan_id}', [PermohonanController::class, 'items'])->name('permohonan.items');
         Route::post('permohonan/tambah_item/{permohonan_id}', [PermohonanController::class, 'tambah_item'])->name('permohonan.tambah.item');
         Route::post('permohonan/simpan_item/{permohonan_id}', [PermohonanController::class, 'simpan_item'])->name('permohonan.simpan.item');

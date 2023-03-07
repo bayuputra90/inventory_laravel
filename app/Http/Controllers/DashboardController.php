@@ -9,7 +9,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $permohonan = Permohonan::orderBy('created_at', 'desc')->limit(4)->get();
+        $where = array();
+
+        if (auth()->user()->role == 'tu') {
+            $where[] = ['status', '!=', 'draft'];
+        }
+
+        $permohonan = Permohonan::where($where)->orderBy('created_at', 'desc')->limit(4)->get();
 
         foreach ($permohonan as $data) {
             $data['color_status'] = $this->color_status($data->status);

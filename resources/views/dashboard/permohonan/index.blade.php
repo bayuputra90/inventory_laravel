@@ -51,7 +51,7 @@
                             @if ($data->status == 'draft')
                                 <span class="align-middle text-black-50">|</span>
                                 <a href="{{ url('permohonan/form_permohonan/'. $data->id) }}" class="btn btn-success btn-sm">Ubah</a>
-                                <form action="{{ url('permohonan/hapus_permohonan' . $data->id) }}" method="POST" class="d-inline">
+                                <form action="{{ url('permohonan/hapus_permohonan/' . $data->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     @method('DELETE')
                                     <span class="align-middle text-black-50">|</span>
