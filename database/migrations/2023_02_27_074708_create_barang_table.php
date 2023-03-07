@@ -20,7 +20,9 @@ return new class extends Migration
             $table->integer('stok')->default(0);
             $table->timestamps();
 
-            $table->foreign('kategori_id')->references('id')->on('kategori')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('kategori_id')->references('id')->on('kategori')
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
         });
     }
 

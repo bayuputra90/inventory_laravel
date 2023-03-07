@@ -10,7 +10,6 @@ class Barang extends Model
     use HasFactory;
 
     protected $table = 'barang';
-
     protected $guard = ['id'];
 
     public function kategori()
