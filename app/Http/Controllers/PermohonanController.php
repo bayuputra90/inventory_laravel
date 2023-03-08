@@ -158,13 +158,15 @@ class PermohonanController extends Controller
                              ->withInput();
         }
 
+        $data_dukung = $request->file('data_dukung')->store('uploads', 'public');
+
         $permohonanItem = new PermohonanItems();
         $permohonanItem->barang_id = $request->barang_id;
         $permohonanItem->permohonan_id = $permohonan_id;
         $permohonanItem->jumlah = $request->jumlah;
         $permohonanItem->satuan = $request->satuan;
         $permohonanItem->merk = $request->merk;
-        $permohonanItem->data_dukung = $request->file('data_dukung')->store('uploads', 'public');
+        $permohonanItem->data_dukung = $data_dukung;
         $permohonanItem->save();
 
         return redirect('permohonan/form_permohonan/' . $permohonan_id);

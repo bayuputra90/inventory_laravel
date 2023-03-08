@@ -55,13 +55,15 @@
             <div>
                 <form action="{{ url('validasi/reject/' . $permohonan->id) }}" method="POST" class="d-inline">
                     @csrf
-                    <button onclick="return confirm('Reject permohonan ?')"
-                        class="btn btn-danger"><i data-feather="x"></i>&nbsp; Reject</button>
+                    <button onclick="return confirm('Reject permohonan ?')" class="btn btn-danger">
+                        <i data-feather="x"></i>&nbsp; Reject
+                    </button>
                 </form>
                 <form action="{{ url('validasi/approve/' . $permohonan->id) }}" method="POST" class="d-inline">
                     @csrf
-                    <button onclick="return confirm('Approve permohonan ?')"
-                        class="btn btn-success align-middle"><i data-feather="check"></i>&nbsp; Approve</button>
+                    <button onclick="return confirm('Approve permohonan ?')" class="btn btn-success align-middle">
+                        <i data-feather="check"></i>&nbsp; Approve
+                    </button>
                 </form>
             </div>
             @endif
